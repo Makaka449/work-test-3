@@ -1,0 +1,121 @@
+.latest-news {
+    background-color: #000;
+    padding: 15px;
+    border-radius: 8px;
+
+
+    #news-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .news-item {
+        cursor: pointer;
+
+        .news-card {
+            background-color: rgb(28, 27, 37);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; 
+
+            &:hover {
+                transform: translateY(-15px);
+            }
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                border-radius: 9px;
+                
+            }
+
+            h3 {
+                margin: 10px 0 0;
+                font-size: 1.2rem;
+                color: #fff;
+            }
+        }
+    }
+
+    .modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+
+            .news-card {
+                margin-bottom: 20px;
+
+                img {
+                    width: 100%;
+                    max-width: 100%;
+                    border-radius: 8px;
+                    margin-bottom: 10px;
+                }
+
+                h2 {
+                    margin-top: 0;
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    margin-top: 10px;
+                }
+            }
+
+            .logout-button {
+                background-color: #c0392b;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1rem;
+                cursor: pointer;
+                border-radius: 5px;
+                display: block;
+                width: 100%;
+                transition: background-color 0.3s ease; 
+
+                &:hover {
+                    background-color: #e74c3c;
+                }
+            }
+
+            .close {
+                position: absolute;
+                top: 1px;
+                right: 6px;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        #news-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        #news-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
